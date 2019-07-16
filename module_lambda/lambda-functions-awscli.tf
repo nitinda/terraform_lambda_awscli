@@ -15,8 +15,8 @@ resource "aws_lambda_function" "demo-lambda-awscli" {
 
 resource "aws_lambda_layer_version" "demo-lambda-layer-awscli" {
     description = "Terraform demo lambda layer for awscli"
-    filename   = "${path.module}/awscli_layers_payload/terraform-demo-awscli-lambda-layer-payload.zip"
+    filename   = "${path.module}/lambda_function/terraform-demo-awscli-lambda-layer-payload.zip"
     layer_name = "terraform-demo-lambda-layer-payload-awscli"
     compatible_runtimes = ["python3.7"]
-    source_code_hash = "${base64sha256(file("${path.module}/awscli_layers_payload/terraform-demo-awscli-lambda-layer-payload.zip"))}"
+    source_code_hash = "${base64sha256(file("${path.module}/lambda_function/terraform-demo-awscli-lambda-layer-payload.zip"))}"
 }
