@@ -3,9 +3,11 @@ import logging
 import json
 # import awscli
 import os
+import sys
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
+sys.path.insert(0, "/opt/python")
 
 def run_command(command):
     command_list = command.split(' ')
@@ -21,4 +23,5 @@ def run_command(command):
     return True
 
 def lambda_handler(event, context):
-    run_command('/opt/aws --version ')
+    run_command('/opt/python/bin/aws-list-all query --region eu-central-1 --service rds --directory ./data/ ')
+    run_command('python -m site')

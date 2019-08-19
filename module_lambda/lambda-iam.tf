@@ -1,4 +1,4 @@
-resource "aws_iam_role" "demo-iam-role-lambda-awscli" {
+resource "aws_iam_role" "demo_iam_role_lambda_awscli" {
   name = "terraform-demo-iam-role-lambda-awscli"
 
   assume_role_policy = <<EOF
@@ -18,9 +18,9 @@ resource "aws_iam_role" "demo-iam-role-lambda-awscli" {
 EOF
 }
 
-resource "aws_iam_role_policy" "demo-iam-role-policy-lambda-awscli" {
+resource "aws_iam_role_policy" "demo_iam_role_policy_lambda_awscli" {
   name = "terraform-demo-iam-role-inline-policy-lambda-awscli"
-  role = "${aws_iam_role.demo-iam-role-lambda-awscli.id}"
+  role = "${aws_iam_role.demo_iam_role_lambda_awscli.id}"
 
   policy = <<EOF
 {
