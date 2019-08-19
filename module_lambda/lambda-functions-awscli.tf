@@ -1,4 +1,4 @@
-resource "aws_lambda_function" "demo_lambda_awscli" {
+resource "aws_lambda_function" "demo_lambda_function_awscli" {
     filename         = "${data.archive_file.demo_archive_file_lambda_function_archive_awscli.output_path}"
     function_name    = "terraform-demo-lambda-awscli"
     description      = "Terraform Demo lambda function with awscli"
