@@ -23,5 +23,4 @@ def run_command(command):
     return True
 
 def lambda_handler(event, context):
-    run_command('/opt/python/bin/aws-list-all query --region eu-central-1 --service rds --directory ./data/ ')
-    run_command('python -m site')
+    run_command('/opt/python/aws-list-all query --directory /tmp/data/ --service efs')

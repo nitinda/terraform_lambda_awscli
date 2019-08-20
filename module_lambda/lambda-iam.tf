@@ -51,4 +51,9 @@ EOF
 }
 
 
+resource "aws_iam_role_policy_attachment" "demo_iam_role_policy_attachment_lambda_awscli_role_ReadOnlyAccess" {
+  role       = "${aws_iam_role.demo_iam_role_lambda_awscli.name}"
+  policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+}
+
 ################################################################################################

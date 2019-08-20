@@ -6,8 +6,8 @@ resource "aws_lambda_function" "demo_lambda_function_awscli" {
     handler          = "lambda_function.lambda_handler"
     source_code_hash = "${data.archive_file.demo_archive_file_lambda_function_archive_awscli.output_base64sha256}"
     runtime          = "python3.7"
-    timeout          = "300"
-    memory_size      = "128"
+    timeout          = "120"
+    memory_size      = "512"
     layers           = ["${aws_lambda_layer_version.demo_lambda_layer_awscli.arn}"]
     publish          = true
 }

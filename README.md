@@ -22,16 +22,19 @@ Please make sure following software installed in local system.
 # Download repo
 git clone git@github.com:nitinda/terraform_lambda_awscli.git
 cd terraform_lambda_awscli/module_lambda/awscli_layers_payload
+mkdir python
 
 # Download the required site packages for python
-pip install awscli -t ./
+pip install awscli -t ./python
+cd python
 ln -s bin/aws
+ln -s bin/aws-list-all
 
 # Setup the python location
-sed -i "1s/.*/\#\!\/var\/lang\/bin\/python/" aws
+sed -i "1s/.*/\#\!\/var\/lang\/bin\/python/" bin/aws bin/aws-list-all
 
 # Create layer payload archive
-zip -r ../lambda_function/terraform-demo-awscli-lambda-layer-payload.zip *
+zip -r ../../lambda_function/terraform-demo-awscli-lambda-layer-payload.zip python/
 
 ```
 
